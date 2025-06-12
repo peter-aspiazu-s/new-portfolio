@@ -1,0 +1,42 @@
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+
+    /* --- Esto es lo clave para el fondo --- */
+    display: flex; /* Usamos flexbox para centrar el icono */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    width: 60px; /* Tamaño del círculo de fondo */
+    height: 60px;
+    background-color: #25D366; /* Tu color de fondo */
+    border-radius: 50%; /* Para hacerlo redondo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: transform 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1); /* Efecto al pasar el mouse */
+}
+
+.whatsapp-btn i {
+    font-size: 3rem; /* Tamaño del icono */
+    color: aliceblue; /* El color del ícono (el verde de WhatsApp) */
+    /* Quita background-color, display, line-height, padding, vertical-align de aquí */
+    /* Estas propiedades ya no son necesarias o se manejan en el contenedor */
+}
+
+/* Considera media queries si quieres que se vea diferente en móvil/escritorio */
+@media (max-width: 768px) {
+  .whatsapp-btn {
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+  }
+  .whatsapp-btn i {
+    font-size: 2.5rem; /* Ajusta el tamaño del icono para pantallas pequeñas */
+  }
+}

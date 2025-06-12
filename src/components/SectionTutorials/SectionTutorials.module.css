@@ -1,0 +1,142 @@
+.section-tutorials {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.section-tutorials__container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.section-tutorials__title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.section-tutorials__title h2 {
+    font-size: 2rem;
+}
+
+.section-tutorials__title hr {
+    width: 50px;
+    height: 3px;
+    border: 0;
+    background-color: #6366f1;
+}
+
+.section-tutorials__container--card {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.section-tutorials__article {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px 5px #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-tutorials__article iframe {
+    width: 100%;
+    height: 200px;
+}
+
+.section-tutorials__article h3 {
+    font-size: 1.3rem;
+}
+
+.section-tutorials__article p {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.section-tutorials__article div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.section-tutorials__article div:nth-child(3) {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0 20px 20px;
+}
+
+.section-tutorials__article svg {
+    width: 20px;
+    fill: #818181 !important;
+}
+
+.section-tutorials__article span {
+    font-size: 0.8rem;
+    color: #818181;
+}
+
+.section-tutorials__container > a {
+    background-color: #d62626;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+@media screen and (min-width: 768px) {
+
+    .section-tutorials__title h2 {
+        text-align: center;
+    }
+
+    .section-tutorials__container--card {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .section-tutorials__article {
+        width: 47%;
+    }
+
+    .section-tutorials__container > a {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .section-tutorials__container--card {
+        justify-content: center;
+    }
+
+    .section-tutorials__article {
+        width: 30%;
+        transition: all 0.3s;
+    }
+
+    .section-tutorials__article:hover {
+        transform: translateY(-5px);
+    }
+
+    .section-tutorials__container > a:hover {
+        transition: 0.3s;
+        background-color: #b91c1c;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .section-tutorials__container {
+        justify-content: center;
+        align-items: center;
+        width: 1200px;
+    }
+
+    .section-tutorials__title {
+        width: 1130px;
+    }
+}

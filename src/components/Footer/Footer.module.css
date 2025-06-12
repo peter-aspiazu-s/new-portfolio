@@ -1,0 +1,152 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #111827;
+    padding: 50px 20px;
+}
+
+/* Información y enlaces a servicios y secciones */
+
+.footer__container--info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-bottom: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgb(31 41 55);
+}
+
+.footer__info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer__info h3 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    word-spacing: -2px;
+    color: white;
+}
+
+.footer__info h3 span {
+    color: #4f46e5;
+}
+
+.footer__info p {
+    color: #d4d4d4;
+    line-height: 25px;
+}
+
+.footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.footer__links > div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer__links div h4 {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.footer__links div a {
+    text-decoration: none;
+    color: #d4d4d4;
+}
+
+.footer__links div ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer__links div li {
+    list-style: none;
+}
+
+.footer__links div div {
+    width: 200px;
+    display: flex;
+    gap: 20px;
+}
+
+.footer__links div div a {
+    display: inline;
+}
+
+.footer__links div div a i {
+    font-size: 1.3rem;
+}
+
+/* Derechos reservados y enlaces a politicas de privacidad */
+
+.footer__container--politic {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer__container--politic small {
+    color: #d4d4d4;
+}
+
+.footer__politic {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__politic a {
+    color: #d4d4d4;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .footer__container--info {
+        flex-direction: row;
+        gap: 0px;
+    }
+
+    .footer__links a:hover {
+        transition: all 0.3s;
+        color: white;
+    }
+
+    .footer__container--politic {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer__politic {
+        gap: 20px;
+    }
+
+    .footer__politic a:hover {
+        transition: all 0.3s;
+        color: white;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+
+    .footer {
+        align-items: center;
+    }
+
+    .footer__container--info {
+        gap: 30px;
+        width: 1200px;
+    }
+
+    .footer__container--politic {
+        width: 1200px;
+    }
+}

@@ -1,0 +1,282 @@
+.article__presentation {
+    padding: 120px 20px 60px;
+    width: 100%;
+    background: linear-gradient(to right, #6366f1, #9333ea);
+    display: flex;
+    justify-content: center;
+}
+
+.article__presentation--container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.article__presentation--content-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.article__presentation--content-text-title{
+    font-size: 2.5rem;
+    line-height: 40px;
+    color: #fff;
+}
+
+.article__presentation--content-text-p{
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.article__presentation--content-text-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.article__presentation--content-text-btn {
+    border-radius: 10px;
+    padding: 20px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+}
+
+.article__presentation--content-text-buttons .article__presentation--content-text-btn:nth-child(1) {
+    background-color: white;
+    border: 0;
+    color: #6366f1;
+}
+
+.article__presentation--content-text-buttons .article__presentation--content-text-btn:nth-child(2) {
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+.article__presentation--container-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 350px;
+    width: 250px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+/* SERIA INCREIBLE QUE LAS IMAGENES ALREDEDOR DE LA IMAGEN DE JS DIERAN VUELTAS
+COMO ORBITANDO */
+.article__presentation--image-js {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 0 25px rgba(0, 150, 255, 0.8),
+                0 0 50px rgba(0, 150, 255, 0.5);
+}
+
+.article__presentation--image-tech {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: contain;
+    z-index: 1;
+    transform: translate(-50%, -50%); /* Centrado el origen del elemento */
+    animation-name: orbit; /* Nombre de la animación, duración y tipo se definirán por cada nth-child */
+    animation-iteration-count: infinite; /* Siempre infinito */
+    animation-timing-function: linear; /* Velocidad constante */
+}
+
+/* HTML (nth-child(2)) */
+.article__presentation--container-image .article__presentation--image-tech:nth-child(2) {
+    --orbit-radius: 80px; /* Reducido de 100px */
+    --orbit-duration: 8s;
+    --orbit-delay: 0s;
+    background-color: #e44d26;
+    width: 55px;
+    height: 55px;
+}
+
+/* CSS (nth-child(3)) */
+.article__presentation--container-image .article__presentation--image-tech:nth-child(3) {
+    --orbit-radius: 100px; /* Reducido de 130px */
+    --orbit-duration: 10s;
+    --orbit-delay: -2s;
+    background-color: #264de4;
+    width: 50px;
+    height: 50px;
+}
+
+/* Bootstrap (nth-child(4)) */
+.article__presentation--container-image .article__presentation--image-tech:nth-child(4) {
+    --orbit-radius: 120px; /* Reducido de 160px */
+    --orbit-duration: 12s;
+    --orbit-delay: -4s;
+    background-color: #5b4282;
+    width: 45px;
+    height: 45px;
+}
+
+/* Tailwind (nth-child(5)) */
+.article__presentation--container-image .article__presentation--image-tech:nth-child(5) {
+    --orbit-radius: 140px; /* Reducido de 190px */
+    --orbit-duration: 14s;
+    --orbit-delay: -6s;
+    background-color: #38b2ac;
+    width: 40px;
+    height: 40px;
+}
+
+/* React JS (nth-child(6)) */
+.article__presentation--container-image .article__presentation--image-tech:nth-child(6) {
+    --orbit-radius: 90px; /* Órbita intermedia */
+    --orbit-duration: 9s;
+    --orbit-delay: -1s;
+    background-color: #001e4a;
+    width: 52px;
+    height: 52px;
+}
+
+/* Next JS (nth-child(7)) */
+.article__presentation--container-image .article__presentation--image-tech:nth-child(7) {
+    --orbit-radius: 110px;
+    --orbit-duration: 11s;
+    --orbit-delay: -3s;
+    background-color: #000000;
+    width: 48px;
+    height: 48px;
+}
+
+/* Express JS (nth-child(8)) */
+.article__presentation--container-image .article__presentation--image-tech:nth-child(8) {
+    --orbit-radius: 130px;
+    --orbit-duration: 13s;
+    --orbit-delay: -5s;
+    background-color: #333333;
+    width: 43px;
+    height: 43px;
+}
+
+/* Node JS (nth-child(9)) */
+.article__presentation--container-image .article__presentation--image-tech:nth-child(9) {
+    --orbit-radius: 150px; /* La órbita más grande, pero ahora más compacta */
+    --orbit-duration: 15s;
+    --orbit-delay: -7s;
+    background-color: #000000;
+    width: 38px;
+    height: 38px;
+}
+
+@keyframes orbit {
+    from {
+        transform: translate(-50%, -50%) translateX(var(--orbit-radius, 50px)) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) translateX(var(--orbit-radius, 50px)) rotate(360deg);
+    }
+}
+
+/* Aplicar las variables CSS en cada planeta */
+.article__presentation--image-tech:nth-child(n) { /* Se aplica a todos los planetas */
+    transform-origin: calc(var(--orbit-radius, 50px) * -1) 0;
+    animation-duration: var(--orbit-duration, 8s);
+    animation-delay: var(--orbit-delay, 0s);
+}
+
+
+@media screen and (min-width: 375px) {
+    .article__presentation--container-image {
+        width: 300px;
+    }
+
+
+    @keyframes orbit {
+        from {
+            transform: translate(-50%, -50%) translateX(var(--orbit-radius, 100px)) rotate(0deg);
+        }
+        to {
+            transform: translate(-50%, -50%) translateX(var(--orbit-radius, 100px)) rotate(360deg);
+        }
+    }
+
+    /* Aplicar las variables CSS en cada planeta */
+    .article__presentation--image-tech:nth-child(n) { /* Se aplica a todos los planetas */
+        transform-origin: calc(var(--orbit-radius, 100px) * -1) 0;
+        animation-duration: var(--orbit-duration, 8s);
+        animation-delay: var(--orbit-delay, 0s);
+    }
+}
+
+
+/* pantallas de hasta 425px */
+@media screen and (min-width: 425px) {
+    .article__presentation--content-text-buttons{
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .article__presentation--content-text-btn {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .article__presentation--container {
+        flex-direction: row;
+    }
+
+    .article__presentation--content-text {
+        width: 45%;
+    }
+
+    .article__presentation--content-text-title {
+        font-size: 3rem;
+        line-height: 50px;
+    }
+
+    .article__presentation--container-image {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .article__presentation--content-text-btn {
+        width: 200px;
+        font-size: 1.2rem;
+        transition: all 0.3s;
+    }
+
+    .article__presentation--content-text-btn:nth-child(1):hover {
+        background-color: #f3f4f6;
+    }
+
+    .article__presentation--content-text-btn:nth-child(2):hover {
+        color: #6366f1;
+        background-color: #fff;
+    }
+}
+
+@media screen and (min-width: 1440px){
+
+    .article__presentation--container {
+        width: 1200px; 
+    }
+
+    .article__presentation--content-text {
+        justify-self: flex-end;
+        width: 600px;
+    }
+    
+    .article__presentation--container-image {
+        width: 400px;
+    }
+}

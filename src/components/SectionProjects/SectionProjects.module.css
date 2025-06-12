@@ -1,0 +1,219 @@
+.section-projects {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.section-projects__container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.section-projects__title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.section-projects__title h2 {
+    font-size: 2rem;
+}
+
+.section-projects__title hr {
+    width: 50px;
+    height: 3px;
+    border: 0;
+    background-color: #6366f1;
+}
+
+.section-projects__container--card {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.section-projects__article {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px 5px #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-projects__article div:first-child {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-projects__article:nth-of-type(1) > div:first-child {
+    background-color: #e0e7ff;
+    color: #6366f1 !important;
+}
+
+.section-projects__article:nth-of-type(2) > div:first-child {
+    background-color: #dcfce7;
+    color: #22c55e !important;
+}
+
+.section-projects__article:nth-of-type(3) > div:first-child {
+    background-color: #f3e8ff;
+    color: #a855f7 !important;
+}
+
+.section-projects__article div svg{
+    width: 100px;
+}
+
+.section-projects__article > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+.section-projects__article h3 {
+    font-size: 1.3rem;
+}
+
+.section-projects__article p {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.section-projects__article span {
+    border-radius: 30px;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    font-weight: 600;
+}
+
+.section-projects__article > div:nth-child(2) div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Primer article */
+.section-projects__article:nth-of-type(1) > div:nth-child(2) div span:nth-child(1) {
+    background-color: #d4d4d8;
+}
+
+.section-projects__article:nth-of-type(1) > div:nth-child(2) div span:nth-child(2) {
+    background-color: #bfdbfe;
+}
+
+.section-projects__article:nth-of-type(1) > div:nth-child(2) div span:nth-child(3) {
+    background-color: #a5f3fc;
+}
+
+/* Segundo article */
+.section-projects__article:nth-of-type(2) > div:nth-child(2) div span:nth-child(1) {
+    background-color: #d4d4d8;
+}
+
+.section-projects__article:nth-of-type(2) > div:nth-child(2) div span:nth-child(2) {
+    background-color: #bfdbfe;
+}
+
+.section-projects__article:nth-of-type(2) > div:nth-child(2) div span:nth-child(3) {
+    background-color: #a5f3fc;
+}
+
+/* Tercer article */
+.section-projects__article:nth-of-type(3) > div:nth-child(2) div span:nth-child(1) {
+    background-color: #fca5a5;
+}
+
+.section-projects__article:nth-of-type(3) > div:nth-child(2) div span:nth-child(2) {
+    background-color: #93c5fd;
+}
+
+.section-projects__article:nth-of-type(3) > div:nth-child(2) div span:nth-child(3) {
+    background-color: #fde68a;
+}
+
+.section-projects__article a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #4f46e5;
+}
+
+.section-projects__container > a {
+    background-color: #4f46e5;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+
+/* Pantallas de hasta 425px */
+@media screen and (min-width: 768px) {
+
+    .section-projects__title h2 {
+        text-align: center;
+    }
+
+    .section-projects__container--card {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .section-projects__article {
+        width: 47%;
+    }
+
+    .section-projects__container > a {
+        width: 250px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .section-projects__container--card {
+        justify-content: center;
+    }
+
+    .section-projects__article {
+        width: 30%;
+        transition: all 0.3s;
+    }
+
+    .section-projects__article:hover {
+        transform: translateY(-5px);
+    }
+
+    .section-projects__container > a:hover {
+        transition: 0.3s;
+        background-color: #4338ca;
+    }
+
+    /* Asegúrate de que el span pueda ser transformado */
+    .section-projects__article div a span {
+        display: inline-block; /* O display: block; según tu diseño deseado */
+        transition: transform 0.3s ease; /* Añade una transición suave para la animación */
+    }
+
+    .section-projects__article div a:hover span {
+        transform: translateX(5px); /* Un valor más sutil para empezar, puedes ajustar */
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    .section-projects__container {
+        justify-content: center;
+        align-items: center;
+        width: 1200px;
+    }
+
+    .section-projects__title {
+        width: 1130px;
+    }
+}

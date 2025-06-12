@@ -1,0 +1,153 @@
+.section-certifications {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.section-certifications__container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.section-certifications__title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.section-certifications__title h2 {
+    font-size: 2rem;
+}
+
+.section-certifications__title hr {
+    width: 50px;
+    height: 3px;
+    border: 0;
+    background-color: #6366f1;
+}
+
+.section-certifications__container--card {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.section-certifications__article {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px 5px #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-certifications__article div:first-child {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-certifications__article > div:first-child {
+    color: #fff !important;
+}
+
+.section-certifications__article:nth-of-type(1) > div:first-child {
+    background-color: #2563eb;
+}
+
+.section-certifications__article:nth-of-type(2) > div:first-child {
+    background-color: #16a34a;
+}
+
+.section-certifications__article:nth-of-type(3) > div:first-child {
+    background-color: #9333ea;
+}
+
+.section-certifications__article div svg{
+    width: 100px;
+}
+
+.section-certifications__article > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+.section-certifications__article h3 {
+    font-size: 1.3rem;
+}
+
+.section-certifications__article p {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.section-certifications__article a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #4f46e5;
+}
+
+.section-certifications__article span {
+    border-radius: 30px;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    font-weight: 600;
+}
+
+
+@media screen and (min-width: 768px) {
+    .section-certifications__title h2 {
+        text-align: center;
+    }
+
+    .section-certifications__container--card {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .section-certifications__article {
+        width: 47%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .section-certifications__container--card {
+        justify-content: center;
+    }
+
+    .section-certifications__article {
+        width: 30%;
+        transition: all 0.3s;
+    }
+
+    .section-certifications__article:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Asegúrate de que el span pueda ser transformado */
+    .section-certifications__article div a span {
+        display: inline-block; /* O display: block; según tu diseño deseado */
+        transition: transform 0.3s ease; /* Añade una transición suave para la animación */
+    }
+
+    .section-certifications__article div a:hover span {
+        transform: translateX(5px); /* Un valor más sutil para empezar, puedes ajustar */
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    .section-certifications__container {
+        justify-content: center;
+        align-items: center;
+        width: 1200px;
+    }
+
+    .section-certifications__title {
+        width: 1130px;
+    }
+}
