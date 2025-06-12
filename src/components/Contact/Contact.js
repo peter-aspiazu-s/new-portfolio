@@ -1,6 +1,95 @@
+'use client';
+
+import { useState } from 'react';
 import styles from "./Contact.module.css";
+import { Loader } from '../Loader/Loader';
+import Swal from 'sweetalert2';
 
 export const Contact = () => {
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+    });
+
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    // Función de validación de email con expresión regular
+    const isValidEmail = (email) => {
+        // Esta regex verifica que haya al menos un punto después del '@'
+        // y que el dominio tenga al menos dos caracteres después del último punto.
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+        return emailRegex.test(email);
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        // --- VALIDACIÓN DE EMAIL EN EL FRONTEND ---
+        if (!isValidEmail(formData.email)) {
+            Swal.fire({
+                icon: 'warning', // Un icono de advertencia es adecuado aquí
+                title: 'Correo inválido',
+                text: 'Por favor, introduce una dirección de correo electrónico válida (ej. tu.email@dominio.com).',
+                confirmButtonText: 'Entendido'
+            });
+            return; // Detiene el envío del formulario si el email es inválido
+        }
+        // --- FIN VALIDACIÓN DE EMAIL ---
+
+        setIsLoading(true); // <-- Activa el loader al iniciar el envío
+
+        try {
+        const response = await fetch('/api/send-email', { 
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: formData.name,
+                email: formData.email,
+                subject: formData.subject,
+                message: formData.message,
+            }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            Swal.fire({
+                icon: 'success',
+                title: '¡Mensaje enviado!',
+                text: 'Tu mensaje ha sido enviado correctamente. Me pondré en contacto contigo pronto.',
+                confirmButtonText: 'Aceptar'
+            });
+            setFormData({ name: '', email: '', subject: '', message: '' });
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: '¡Error al enviar!',
+                text: `Hubo un problema al enviar tu mensaje: ${data.message || 'Por favor, inténtalo de nuevo.'}`,
+                confirmButtonText: 'Cerrar'
+            });
+        }
+        } catch (error) {
+            console.error('Error al enviar el formulario:', error);
+            Swal.fire({
+                icon: 'error',
+                title: '¡Error de conexión!',
+                text: 'No se pudo conectar con el servidor. Por favor, revisa tu conexión e inténtalo de nuevo más tarde.',
+                confirmButtonText: 'Cerrar'
+            });
+        }  finally {
+            setIsLoading(false); // <-- Desactiva el loader al finalizar (éxito o error)
+        }
+    };
+        
   return (
     <div id="contacto" className={styles.contact}>
         <h3>Contacto</h3>
@@ -53,21 +142,52 @@ export const Contact = () => {
                 </div>
             </aside>
             
-            <form className={styles.contact__form}>
+            <form className={styles.contact__form} onSubmit={handleSubmit}>
                 <h4>Envíame un mensaje</h4>
 
-                <label for="name">Nombre</label>
-                <input type="text" id="nombre" placeholder="Tu nombre" required />
-                <label for="email">Email</label>
-                <input type="text" id="email" placeholder="Tu email" required />
-                <label for="subject">Asunto</label>
-                <input type="text" id="subject" placeholder="Tu asunto" required />
-                <label for="message">Mensaje</label>
-                <textarea rows="5" id="message" placeholder="Escribe tu mensaje..."></textarea>
+                <label htmlFor="name">Nombre</label>
+                <input 
+                    type="text"
+                    id="name" 
+                    name="name" 
+                    placeholder="Tu nombre"
+                    value={formData.name} 
+                    onChange={handleChange} 
+                    required />
+                <label htmlFor="email">Email</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="Tu email"
+                    value={formData.email}
+                    onChange={handleChange} 
+                    required />
+                <label htmlFor="subject">Asunto</label>
+                <input 
+                    type="text"
+                    id="subject" 
+                    name="subject" 
+                    placeholder="Tu asunto"
+                    value={formData.subject} 
+                    onChange={handleChange} 
+                    required />
+                <label htmlFor="message">Mensaje</label>
+                <textarea 
+                    rows="5"
+                    id="message" 
+                    name="message" 
+                    placeholder="Escribe tu mensaje..."
+                    value={formData.message} 
+                    onChange={handleChange}
+                    required></textarea>
 
-                <button type="submit">Enviar mensaje</button>
+                <button type="submit">
+                    {isLoading ? 'Enviando...' : 'Enviar mensaje'}
+                </button>
             </form>
         </div>
+        {isLoading && <Loader />}
     </div>
   )
 }

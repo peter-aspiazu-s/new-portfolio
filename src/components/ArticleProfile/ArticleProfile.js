@@ -15,7 +15,7 @@ export const ArticleProfile = () => {
                 <hr />
 
                 <p>Soy un desarrollador web especializado en JavaScript con más de 5 años de experiencia creando aplicaciones web modernas y responsivas. Mi enfoque se centra en construir interfaces de usuario intuitivas y experiencias de usuario excepcionales.</p>
-                <p>Trabajo con las últimas tecnologías del ecosistema JavaScript, incluyendo React, Vue, Node.js, y herramientas modernas de desarrollo. Me apasiona el código limpio, la optimización de rendimiento y las mejores prácticas de desarrollo.</p>
+                <p>Trabajo con las últimas tecnologías del ecosistema JavaScript, incluyendo React, Next js, Node.js, y herramientas modernas de desarrollo. Me apasiona el código limpio, la optimización de rendimiento y las mejores prácticas de desarrollo.</p>
 
                 <div className={styles["article__profile--container-tech"]}>
                     <div>
