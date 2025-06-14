@@ -1,11 +1,8 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import localFont from 'next/font/local';
-import { Header } from "@/components/Header/Header";
 
 import Script from "next/script";
-import { Footer } from "@/components/Footer/Footer";
-import { WhatsAppBtn } from "@/components/WhatsAppBtn/WhatsAppBtn";
 
 // Define tu fuente local 'Outfit'
 const outfit = localFont({
@@ -26,14 +23,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es" className={outfit.variable}>
       <body>
-        <Header />
 
         {children}
         
-        <Footer />
-
-        <WhatsAppBtn />
-
         <Script 
           src="https://kit.fontawesome.com/0894a0420e.js"
           crossOrigin="anonymous"

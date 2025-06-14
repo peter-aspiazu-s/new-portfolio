@@ -1,0 +1,170 @@
+/* Base global para el componente */
+.linkTreeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #0f0f0f;
+    font-family: 'Segoe UI', sans-serif;
+    color: #ffffff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Sección del Perfil */
+.profileSection {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.profileImage {
+    border-radius: 50%;
+    border: 4px solid #00c0ff; 
+    box-shadow: 0 0 15px rgba(0, 192, 255, 0.4);
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.profileName {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #007bff, #00c0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.profileBio {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ccc;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.linksSection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.botonBurbujas {
+    position: relative;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, #007bff, #00c0ff); 
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.botonBurbujas:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 40px rgba(0, 123, 255, 0.6);
+}
+
+
+.botonBurbujas .burbuja {
+    position: absolute;
+    bottom: -15px;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.15); 
+    border-radius: 50%;
+    animation: flotar 4s infinite ease-out;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Variaciones en la posición y delay para cada burbuja */
+.botonBurbujas .burbuja:nth-child(2) { left: 10%; animation-delay: 0s; }
+.botonBurbujas .burbuja:nth-child(3) { left: 30%; animation-delay: 0.5s; }
+.botonBurbujas .burbuja:nth-child(4) { left: 50%; animation-delay: 1s; }
+.botonBurbujas .burbuja:nth-child(5) { left: 70%; animation-delay: 1.5s; }
+.botonBurbujas .burbuja:nth-child(6) { left: 90%; animation-delay: 2s; }
+.botonBurbujas .burbuja:nth-child(7) { left: 25%; animation-delay: 2.5s; width: 12px; height: 12px;}
+.botonBurbujas .burbuja:nth-child(8) { left: 75%; animation-delay: 3s; width: 18px; height: 18px;}
+
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0px) scale(0.8);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.4;
+    }
+    50% {
+        transform: translateY(-40px) scale(1.1);
+        opacity: 0.7;
+    }
+    80% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-80px) scale(0.9);
+        opacity: 0;
+    }
+}
+
+/* Pie de página */
+.footerSection {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Media Queries para Responsive */
+@media (max-width: 768px) {
+    .profileName {
+        font-size: 1.8rem;
+    }
+    .profileBio {
+        font-size: 1rem;
+    }
+    .botonBurbujas {
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profileName {
+        font-size: 1.6rem;
+    }
+    .profileBio {
+        font-size: 0.9rem;
+    }
+    .botonBurbujas {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+    .profileSection {
+        padding: 15px;
+    }
+    .linksSection {
+        gap: 15px;
+    }
+}
