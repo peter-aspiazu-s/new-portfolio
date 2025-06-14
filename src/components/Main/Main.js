@@ -6,7 +6,7 @@ import { SectionTutorials } from "../SectionTutorials/SectionTutorials"
 
 export const Main = () => {
   return (
-    <main class="main" id="inicio">
+    <main class="main" >
 
         <ArticlePresentation />
 

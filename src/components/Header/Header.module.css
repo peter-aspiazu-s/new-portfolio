@@ -148,8 +148,20 @@
         transform: scaleX(1);
     }
 
+    /* Regla para el estado activo del enlace (underline) */
+    .header__nav--ul a.active-link::after {
+        transform: scaleX(1); /* Fuerza la línea a estar visible */
+    }
+
+    .header__nav--ul li { /* Este ya estaba, lo ajusto para el color */
+        list-style: none;
+        color: #3e3e3e; /* Color por defecto */
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: color 0.3s; /* Agrega transición para el color del texto */
+    }
+
     .header__nav--ul li:hover {
-        transition: 0.3ss;
         color: #4f46e5;
     }
 }

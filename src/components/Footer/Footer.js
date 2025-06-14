@@ -24,7 +24,8 @@ export const Footer = () => {
                     <ul>
                         <a href="https://es.fiverr.com/paspiazu/design-a-clean-and-responsive-wordpress-website" target="_blank"><li>Creación con Wordpress</li></a>
                         <a href="https://es.fiverr.com/paspiazu/create-code-in-html-css-javascript" target="_blank"><li>Creación con Html, Css y Javascript</li></a>
-                        <a href="javascript:void(0)"><li>Aplicaciones SPA con React</li></a>
+                        <a href="https://go.fiverr.com/visit/?bta=1129190&brand=logomaker" target="_blank"><li>Crea tu logo con IA</li></a>
+                        <a href="https://wa.link/1zo0pd" target="_blank"><li>Aplicaciones SPA con React</li></a>
                         <a href="javascript:void(0)"><li>Cursos</li></a>
                     </ul>
                 </div>
