@@ -17,6 +17,7 @@ export const Header = () => {
         // Lista de IDs de las secciones a observar
         const sections = [
             'inicio',
+            'courses',
             'proyectos',
             'tutoriales',
             'certificados',
@@ -80,6 +81,7 @@ export const Header = () => {
                     <nav  className={`${styles.header__nav} ${menuOpen ? styles['nav-open'] : ''}`}>
                         <ul className={styles['header__nav--ul']}>
                             <a className={`${styles['header__nav--ul-li']} ${activeSection === 'inicio' ? styles['active-link'] : ''}`} href="#inicio" onClick={handleMenu}><li>Inicio</li></a>
+                            <a className={`${styles['header__nav--ul-li']} ${activeSection === 'courses' ? styles['active-link'] : ''}`} href="#courses" onClick={handleMenu}><li>Cursos</li></a>
                             <a className={`${styles['header__nav--ul-li']} ${activeSection === 'proyectos' ? styles['active-link'] : ''}`} href="#proyectos" onClick={handleMenu}><li>Proyectos</li></a>
                             <a className={`${styles['header__nav--ul-li']} ${activeSection === 'tutoriales' ? styles['active-link'] : ''}`} href="#tutoriales" onClick={handleMenu}><li>Tutoriales</li></a>
                             <a className={`${styles['header__nav--ul-li']} ${activeSection === 'certificados' ? styles['active-link'] : ''}`} href="#certificados" onClick={handleMenu}><li>Certificados</li></a>

@@ -2,7 +2,7 @@ import styles from "./Courses.module.css";
 
 export const Courses = () => {
   return (
-    <section id="proyectos" className={styles["section-courses"]}>
+    <section id="courses" className={styles["section-courses"]}>
         <div className={styles["section-courses__container"]}>
         
             <div className={styles["section-courses__title"]}>
