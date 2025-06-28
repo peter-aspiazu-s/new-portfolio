@@ -26,7 +26,7 @@ export const Footer = () => {
                         <a href="https://es.fiverr.com/paspiazu/create-code-in-html-css-javascript" target="_blank"><li>Desarrollo Frontend (HTML, CSS, JS)</li></a>
                         <a href="https://go.fiverr.com/visit/?bta=1129190&brand=logomaker" target="_blank"><li>Crea tu logo con IA</li></a>
                         <a href="https://wa.link/1zo0pd" target="_blank"><li>Aplicaciones SPA con React</li></a>
-                        <a href="javascript:void(0)"><li>Cursos</li></a>
+                        <a href="https://www.udemy.com/course/aprende-html5-y-css3-con-proyectos-desde-la-base-al-diseno/?referralCode=7EBB2E0B383086915680" target="_blank"><li>Cursos</li></a>
                     </ul>
                 </div>
                 <div>
