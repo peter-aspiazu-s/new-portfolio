@@ -57,7 +57,7 @@ export const ArticlePresentationVentas = () => {
                   <div>
                     <pre>
                       <code>
-                        &lt;div class="container"&gt;&lt;/div&gt;
+                        &lt;div class=&quot;container&quot;&gt;&lt;/div&gt;
                       </code>
                     </pre>
                   </div>
