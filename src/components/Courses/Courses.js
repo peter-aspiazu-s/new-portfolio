@@ -13,7 +13,7 @@ export const Courses = () => {
             <div className={styles["section-courses__container--card"]}>
                 <article className={styles["section-courses__article"]}>
                     <div>
-                        <img src="/images/imagen-curso-html-css.png" />
+                        <img src="/images/imagen-curso-html-css.png" alt="imagen de curso html y css" />
                     </div>
 
                     <div>
